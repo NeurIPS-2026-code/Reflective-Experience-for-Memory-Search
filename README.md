@@ -6,7 +6,7 @@ code will update later...
 The tutorial will be updated later...
 
 
-![pipeline](assets/pipeline.png)
+![pipeline](assets/pipeline.pdf)
 
 
 # Project Structure
