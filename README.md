@@ -6,21 +6,8 @@ code will update later...
 The tutorial will be updated later...
 
 
+![pipeline](assets/pipeline.png)
 
-
-
-
-# Project Structure
-
-# Repository Overview
-
-The repository is organized into three main components:
-
-- `gam/`: Baseline GAM memory retrieval framework
-- `exp/`: R²-Mem self-reflection and experience learning modules
-- `eval/`: Benchmark evaluation scripts
-
----
 
 # Project Structure
 
