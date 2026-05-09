@@ -6,6 +6,106 @@ code will update later...
 The tutorial will be updated later...
 
 
+
+
+
+
+# Project Structure
+
+# Repository Overview
+
+The repository is organized into three main components:
+
+- `gam/`: Baseline GAM memory retrieval framework
+- `exp/`: R²-Mem self-reflection and experience learning modules
+- `eval/`: Benchmark evaluation scripts
+
+---
+
+# Project Structure
+
+```text
+R²-Mem/
+├── requirements.txt                          # Python dependencies
+│
+├── scripts/
+│   ├── download_data.sh                     # Download datasets
+│   ├── eval_hotpotqa.sh                     # ⚙️ run baseline GAM HotpotQA
+│   ├── eval_locomo.sh                       # ⚙️ run baseline GAM LoCoMo
+│   └── eval_narrativeqa.sh                  # ⚙️ run baseline GAM NarrativeQA
+│
+├── data/
+│   └── locomo/
+│       └── locomo10.json                    # 📚 LoCoMo datasets (Other datasets are too large, please download them yourself.)
+│
+├── gam/                                     # Baseline GAM framework
+│   │
+│   ├── agents/
+│   │   ├── memory_agent.py                  # Memory agent
+│   │   └── research_agent.py                # Research agent
+│   │
+│   ├── retriever/
+│   │   ├── bm25.py                          # Sparse BM25 retriever
+│   │   ├── dense_retriever.py               # Dense retriever
+│   │   └── index_retriever.py               # Retrieval index management
+│   │
+│   ├── generator/
+│   │   ├── openai_generator.py              # OpenAI API backend
+│   │   └── vllm_generator.py                # vLLM inference backend
+│   │
+│   ├── prompts/
+│   │   ├── memory_prompts.py                # Memory retrieval prompts
+│   │   └── research_prompts.py              # Research prompts
+│   │
+│   ├── config/
+│   │   ├── generator.py                     # Generator configuration
+│   │   └── retriever.py                     # Retriever configuration
+│   │
+│   └── schemas/
+│       ├── memory.py
+│       ├── page.py
+│       ├── result.py
+│       └── search.py
+│
+├── exp/                                     # R²-Mem framework
+│   │
+│   ├── self_reflection.py                   # Self-reflection and experience generation (✨Learner)
+│   ├── judge_model.py                       # Evaluator model (✨Evaluator)
+│   ├── evaluate_locomo.py                   # Compare results of R²-Mem and GAM on [LoCoMo]
+│   ├── evaluate_hotpotqa_narrativeqa.py     # Compare results of R²-Mem and GAM on [hotpotqa/narrativeqa]
+│   │
+│   ├── prompts/
+│   │   ├── self_reflection_prompts.py       # self-Reflection prompts
+│   │   ├── research_prompts_exp.py          # Experience-aware prompts
+│   │   └── research_agent_exp.py            # R²-Mem agent prompts
+│   │
+│   └── eval/
+│       ├── locomo.py                        # 😎 run R²-Mem LoCoMo evaluation with experience bank
+│       ├── research_agent_exp_main.py       # Main R²-Mem pipeline
+│       ├── experience_encoder.py            # Experience retrieval encoder
+│       │
+│       ├── datasets_test/
+│       │   ├── hotpotqa_exp.py              # HotpotQA with experience bank
+│       │   └── narrativeqa_exp.py           # NarrativeQA with experience bank
+│       │
+│       └── exp_scripts/
+│           ├── exp_hotpotqa.sh              # 😎 run R²-Mem HotpotQA evaluation script with experience bank
+│           └── exp_narrativeqa.sh           # 😎 run R²-Mem NarrativeQA evaluation script with experience bank
+│
+└── eval/
+    ├── hotpotqa_test.py                     # HotpotQA benchmark test
+    ├── locomo_test.py                       # LoCoMo benchmark test
+    └── narrativeqa_test.py                  # NarrativeQA benchmark test
+```
+
+
+
+
+
+
+
+
+
 # Environment Setup
 ## 1. Download Models
 
