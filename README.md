@@ -219,14 +219,3 @@ on the LoCoMo benchmark.
 6. Run R²-Mem evaluation
 7. Compare R²-Mem and GAM results
 ```
-
----
-
-# Notes
-
-- Ensure the vLLM server is running before launching self-reflection or evaluation scripts.
-- The evaluator API must support OpenAI-compatible chat completion APIs.
-- GPU memory usage may need adjustment depending on your hardware.
-- We recommend using CUDA-enabled GPUs for all experiments.
-
----
