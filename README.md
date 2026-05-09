@@ -6,7 +6,8 @@ code will update later...
 The tutorial will be updated later...
 
 
-![pipeline](assets/pipeline.pdf)
+## Framework Overview
+![pipeline](assets/pipeline.png)
 
 
 # Project Structure
