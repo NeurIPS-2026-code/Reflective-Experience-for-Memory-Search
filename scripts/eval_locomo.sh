@@ -10,8 +10,8 @@ outputdir=your_results
 mkdir -p $outputdir
 
 # Run LoCoMo evaluation
-python3 R²-Mem/eval/locomo_test.py \
-    --data R²-Mem/data/locomo/locomo10.json \
+python3 eval/locomo_test.py \
+    --data data/locomo/locomo10.json \
     --outdir $outputdir \
     --start-idx 0 \
     --memory-api-key "empty" \
