@@ -108,6 +108,8 @@ at least:
 
 ```bash
 pip install -r requirements.txt
+cd gam
+pip install -e ".[all]"
 ```
 
 ---
@@ -137,7 +139,7 @@ Run the following script to obtain:
 - baseline GAM performance
 
 ```bash
-bash R²-Mem/scripts/eval_locomo.sh
+bash scripts/eval_locomo.sh
 ```
 
 ---
@@ -147,7 +149,7 @@ bash R²-Mem/scripts/eval_locomo.sh
 Before running self-reflection, configure the following parameters in:
 
 ```bash
-R²-Mem/exp/self_reflection.py
+exp/self_reflection.py
 ```
 
 ## Required Configurations
@@ -205,7 +207,7 @@ Set the directory where you want to store the generated experience bank.
 ## Run Self-Reflection
 
 ```bash
-python R²-Mem/exp/self_reflection.py
+python exp/self_reflection.py
 ```
 
 This step will:
@@ -222,7 +224,7 @@ This step will:
 Modify the following file:
 
 ```bash
-R²-Mem/exp/eval/research_agent_exp_main.py
+exp/eval/research_agent_exp_main.py
 ```
 
 ## Required Modifications
@@ -246,7 +248,7 @@ model_size
 Modify:
 
 ```bash
-R²-Mem/exp/eval/locomo.py
+exp/eval/locomo.py
 ```
 
 ## Required Configurations
@@ -274,7 +276,7 @@ Path to the previously generated GAM baseline results.
 ## Run LoCoMo Evaluation
 
 ```bash
-python R²-Mem/exp/eval/locomo.py
+python exp/eval/locomo.py
 ```
 
 ---
@@ -284,7 +286,7 @@ python R²-Mem/exp/eval/locomo.py
 Run:
 
 ```bash
-python R²-Mem/exp/evaluate_locomo.py
+python exp/evaluate_locomo.py
 ```
 
 This script evaluates and compares:
