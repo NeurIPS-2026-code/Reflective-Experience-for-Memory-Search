@@ -15,8 +15,8 @@ do
     echo "Processing dataset: $dataset"
     outputdir=$base_outputdir/${dataset}
 
-    python3 R²-Mem/eval/hotpotqa_test.py \
-        --data R²-Mem/data/hotpotqa/${dataset}.json \
+    python3 eval/hotpotqa_test.py \
+        --data data/hotpotqa/${dataset}.json \
         --outdir $outputdir \
         --start-idx 0 \
         --max-tokens 2048 \
