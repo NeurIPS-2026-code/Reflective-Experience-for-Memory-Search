@@ -99,7 +99,7 @@ R²-Mem/
 
 Please download the following models and place them in your own local paths:
 at least:
-- Qwen2.5-3B-Instruct
+- Qwen2.5-7B-Instruct
 - BAAI/bge-m3
 
 ---
@@ -119,8 +119,8 @@ Start the vLLM OpenAI-compatible API server:
 
 ```bash
 python -m vllm.entrypoints.openai.api_server \
-    --model qwen2.5-3B-Instruct \
-    --served-model-name qwen2.5-3B-Instruct \
+    --model qwen2.5-7B-Instruct \
+    --served-model-name qwen2.5-7B-Instruct \
     --trust-remote-code \
     --gpu-memory-utilization 0.85 \
     --max-model-len 32768 \
@@ -139,6 +139,7 @@ Run the following script to obtain:
 - baseline GAM performance
 
 ```bash
+export PYTHONPATH=$(pwd)
 bash scripts/eval_locomo.sh
 ```
 
