@@ -1,5 +1,5 @@
 import sys
-
+from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 sys.path.append(str(ROOT_DIR))
@@ -37,6 +37,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 import faiss
 import math
+import os
 
 # from exp_replay import ReplayEngine
 DEEPSEEK_API_key = "your_api_key"
@@ -56,7 +57,8 @@ datasets = "locomo"
 path_locomo = "locomo_7B"
 
 # Experience bank path
-expbank_path = "..."
+expbank_path = "expbank"
+os.makedirs(expbank_path, exist_ok=True)
 
 # hotpotqa dataset
 # hotpotqa_data = "eval_400"
@@ -472,11 +474,11 @@ def main():
         # According to data distribution (question category types and counts)
         convs = [26]
         for conv in convs:
-            with open(f"results/{path_locomo}/conv-{conv}/qa_results.json", 'r', encoding='utf-8') as file:
+            with open(f"{path_locomo}/conv-{conv}/qa_results.json", 'r', encoding='utf-8') as file:
                 items = json.load(file)
             for idx, item in enumerate(items, start=1):
                 try:
-                    WORKDIR = f"results/{path_locomo}/conv-{conv}"
+                    WORKDIR = f"{path_locomo}/conv-{conv}"
                     print(f"=========== Processing Q{idx} ===========")
                     json_path = f"{WORKDIR}/research_trace_q{idx}.json"
                     ans_sum, sum_tokens, self_reflection_tokens = self_reflection(json_path, item)
