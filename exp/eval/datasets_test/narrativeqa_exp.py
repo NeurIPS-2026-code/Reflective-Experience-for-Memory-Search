@@ -10,12 +10,11 @@ import random
 from typing import Any, Counter, Dict, List, Optional, Tuple
 from tqdm import tqdm
 
+from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parents[2]
 sys.path.append(str(ROOT_DIR))
 
 from exp.eval.research_agent_exp_main import ResearchAgent_exp
-
-
 
 from gam import (
     MemoryAgent,
