@@ -225,7 +225,7 @@ This step will:
 Modify the following file:
 
 ```bash
-exp/eval/research_agent_exp_main.py
+exp/eval/research_agent_exp_main.py and exp/eval/experience_encoder.py
 ```
 
 ## Required Modifications
@@ -242,6 +242,11 @@ exp_bank_path
 model_size
 ```
 
+### Experience Encoder 
+
+```python
+_MODEL_PATH
+```
 ---
 
 # Step 4: Configure LoCoMo Evaluation
