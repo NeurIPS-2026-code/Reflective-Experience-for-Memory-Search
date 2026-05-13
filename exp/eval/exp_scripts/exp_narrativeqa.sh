@@ -13,8 +13,8 @@ outputdir=your_path/results/narrativeqa
 mkdir -p $outputdir
 
 # Run NarrativeQA evaluation
-python3 R²-Mem/exp/eval/datasets_test/narrativeqa_exp.py \
-    --data-dir R²-Mem/data/narrativeqa \
+python3 exp/eval/datasets_test/narrativeqa_exp.py \
+    --data-dir data/narrativeqa \
     --split test \
     --outdir $outputdir \
     --start-idx 30 \
