@@ -3,7 +3,7 @@ import os
 import json
 import sys
 
-
+from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parents[2]
 sys.path.append(str(ROOT_DIR))
 
@@ -24,10 +24,22 @@ from gam import (
 )
 
 model_size = "7B"
-results_path = f"..."
+
+
+import os
+results_path = f"results_locomo_exp"
+os.makedirs(results_path, exist_ok=True)
+
+convs = [30, 41, 42, 43, 44, 47, 48, 49, 50]
+
+for conv in convs:
+    conv_folder = os.path.join(results_path, str(conv))
+    os.makedirs(conv_folder, exist_ok=True)
+
+DENSE_MODEL_PATH = "your_bge-m3_model"
 
 # use GAM's memory pages can reduce the same (pages memories construction)
-GAM_path = f"..."
+GAM_path = f"your_results_locomo"
 
 base_model = "qwen2.5-7B-Instruct"
 base_url = "http://localhost:8001/v1"
@@ -189,14 +201,13 @@ class ReplayEngine:
 
 
 def main():
-    convs = [30, 41, 42, 43, 44, 47, 48, 49, 50]
+    
     for conv in convs:
         TOKENS = 0  # each conv tokens
         conv = str(conv)
         print(f"========= conv:{conv} =========")
         qa_results = []
         WORKDIR = f"{GAM_path}/conv-{conv}"
-        DENSE_MODEL_PATH = "your_bge_model"
         replayer = ReplayEngine(WORKDIR, DENSE_MODEL_PATH)
 
         with open(f"{GAM_path}/conv-{conv}/qa_results.json", 'r', encoding='utf-8') as file:
